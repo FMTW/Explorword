@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     Transform cam;
 
+    GameObject previousObject;
     public LayerMask item;
 
     void Start()
@@ -23,14 +24,28 @@ public class GameManager : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 2f, item))
         {
             Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-            Debug.Log(hit.transform.gameObject.name);
-            if (hit.transform.gameObject.name.Contains("bar"))
+
+            if (hit.transform.gameObject != previousObject)
             {
-                print("YESSS!");
+                print("yip");
+                if (previousObject != null)
+                {
+                    previousObject.GetComponent<Outline>().enabled = false;
+                }
+
+                previousObject = hit.transform.gameObject;
+                hit.transform.GetComponent<Outline>().enabled = true;
             }
+
+
         }
         else
         {
+            if (previousObject != null)
+            {
+                previousObject.GetComponent<Outline>().enabled = false;
+                previousObject = null;
+            }
             Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * 2f, Color.green);
         }
 
