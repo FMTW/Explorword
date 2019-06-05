@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 2f, item))
+        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 4f, item))
         {
             Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
                 previousObject.GetComponent<Outline>().enabled = false;
                 previousObject = null;
             }
-            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * 2f, Color.green);
+            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * 4f, Color.green);
         }
 
     }
