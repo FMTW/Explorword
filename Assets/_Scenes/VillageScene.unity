@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1816231532}
-  m_IndirectSpecularColor: {r: 0.56211436, g: 0.6277977, b: 0.6928042, a: 1}
+  m_IndirectSpecularColor: {r: 0.5648564, g: 0.6340336, b: 0.7125716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6034,6 +6034,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 461214138}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &473201176
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Vuforia_Ground_PlaneMaterial
+
+    178852'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: cd7a3af39a7d430d92abe6f3a4612ebd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1001 &476213651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10819,7 +10847,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 951612159}
+  - {fileID: 473201176}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12045,34 +12073,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 949587550}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &951612159
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'Vuforia_Ground_PlaneMaterial
-
-    258960'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cd7a3af39a7d430d92abe6f3a4612ebd, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
 --- !u!1001 &958649489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14623,7 +14623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db47633a899cdfc4c84f1cab45167646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 5
+  detectionDistance: 10
   item:
     serializedVersion: 2
     m_Bits: 1048576
@@ -23042,13 +23042,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816231531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.17364816, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1998300908}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 20, z: 0}
 --- !u!1001 &1824273205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26345,8 +26345,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998300903}
-  m_LocalRotation: {x: -0.06971899, y: -0.91796833, z: 0.1865813, w: -0.34301725}
-  m_LocalPosition: {x: -5.94, y: 5.08, z: 6.7}
+  m_LocalRotation: {x: -0.28587893, y: -0.35090998, z: 0.11342326, w: -0.8844607}
+  m_LocalPosition: {x: -6.8617196, y: 7.573306, z: -4.911506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1816231533}
