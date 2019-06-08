@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/_Scenes/TestUI.unity
+    guid: c3bef32f4b56c684f8d7ca386a5f3fb3
+  - enabled: 0
+    path: Assets/_Scenes/VillageScene.unity
+    guid: f4c6fa51730b86f4e827700f358ba6f4
   - enabled: 1
+    path: Assets/_Scenes/RoomScene.unity
+    guid: 1e4ca89c430f48841bde911a4e323773
+  - enabled: 0
     path: Assets/_Scenes/SampleScene.unity
     guid: cb1593be324fc0242a7ecfda035241dc
+  - enabled: 0
+    path: Assets/_Scenes/ParkScene.unity
+    guid: a86620edd257c7f4fa5e3659027d157f
   m_configObjects: {}
