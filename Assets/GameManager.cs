@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public float hitDistance = 5f;
     RaycastHit hit;
 
     Transform cam;
@@ -41,9 +42,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 4f, item))
+        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, hitDistance, item))
         {
-            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * hitDistance, Color.red);
 
             if (hit.transform.gameObject != previousObject)
             {
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
                 previousObject.GetComponent<Outline>().enabled = false;
                 previousObject = null;
             }
-            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * 4f, Color.green);
+            Debug.DrawRay(cam.position, cam.TransformDirection(Vector3.forward) * hitDistance, Color.green);
         }
 
     }
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     public void ItemCheck()
     {
-        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, 4f, item))
+        if (Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, hitDistance, item))
         {
             selectedItem = hit.transform.gameObject.name;
             selectedItem = selectedItem.ToLower();
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 lives--;
-                if (score > o)
+                if (score > 0)
                 {
                     score--;
                 }
