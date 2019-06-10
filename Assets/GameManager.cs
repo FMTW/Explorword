@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
     public GameObject heart2;
     public GameObject heart3;
 
+    public GameObject UI;
+    public GameObject resultScreen;
+
+    public Text resultText;
+    public Text endScore;
+
 
 
     void Start()
@@ -106,7 +112,18 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
+        UI.SetActive(false);
+        resultScreen.SetActive(true);
+        resultText.text = "Level Complete!";
+        endScore.text = "Score: " + score;
+    }
 
+    void Lose()
+    {
+        UI.SetActive(false);
+        resultScreen.SetActive(true);
+        resultText.text = "Game Over";
+        endScore.text = "Score: " + score;
     }
 
     public void ItemCheck()
@@ -137,6 +154,11 @@ public class GameManager : MonoBehaviour
                 {
                     score--;
                 }
+
+                if (lives <= 0)
+                {
+                    Lose();
+                }
                 UIUpdate();
                 print("incorrect");
             }
@@ -148,5 +170,10 @@ public class GameManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
     }
 }
