@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     //UI
     public Text scoreText;
     public Text taskText;
+    public Text itemText;
     public GameObject heart1;
     public GameObject heart2;
     public GameObject heart3;
@@ -150,6 +151,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 lives--;
+                itemText.text = selectedItem;
                 if (score > 0)
                 {
                     score--;

@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public void Level1()
+
+    public AudioSource aSource;
+
+    public void Wrapper(int level)
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine("Level", level);
     }
 
-    public void Level2()
+    IEnumerator Level(int level)
     {
-        SceneManager.LoadScene(2);
-    }
-
-    public void Level3()
-    {
-        SceneManager.LoadScene(3);
+        aSource.Play();
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(level);
     }
 }
