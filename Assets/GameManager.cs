@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
     public Text resultText;
     public Text endScore;
 
+    public AudioSource aSource;
+    public AudioClip correct;
+    public AudioClip wrong;
+    public AudioClip win;
+    public AudioClip lose;
+
 
 
     void Start()
@@ -140,10 +146,12 @@ public class GameManager : MonoBehaviour
                 taskIndex++;
                 if (taskIndex < taskItem.Length)
                 {
+                    aSource.PlayOneShot(correct);
                     UIUpdate();
                 }
                 else
                 {
+                    aSource.PlayOneShot(win);
                     Win();
                 }
                 print("correct");
@@ -151,6 +159,8 @@ public class GameManager : MonoBehaviour
             else
             {
                 lives--;
+                
+
                 itemText.text = selectedItem;
                 if (score > 0)
                 {
@@ -159,7 +169,12 @@ public class GameManager : MonoBehaviour
 
                 if (lives <= 0)
                 {
+                    aSource.PlayOneShot(lose);
                     Lose();
+                }
+                else
+                {
+                    aSource.PlayOneShot(wrong);
                 }
                 UIUpdate();
                 print("incorrect");
